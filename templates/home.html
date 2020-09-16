@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron colorful-abstract-random-numbers-background-600w-143655604" >
+  <center>
+  <center><image src = "{{url_for('static', filename = 'imagenes/tecni.jpg')}}" width="1000" height="250" alt=""></center> 
+  <hr class="my-4">
+  <p><h5>En el siguiente portal podras realizar una serie de acciones 
+    probabilisticas desde generar numeros ramdomicos hasta probar 
+    el funcionamiento y resolucion de las lineas de esperas en diferentes 
+    versiones. Te invitamos a explorar, desde ya sé</h5></p>
+  <p><h4>!BIENVENIDO!</h4></p>
+  <center>
+  <table border="0">
+  <tr>
+    <td>
+    <div class="card" style="width: 20rem;">
+      <center><image src = "{{url_for('static', filename = 'imagenes/mr.jpg')}}" class="card-img-top" alt="..."></center> 
+      <p class="card-text"></p>
+      <a href="{{ url_for('mrandom') }}" class="btn btn-outline-success">Métodos Randoms</a>
+    </td>
+    <td><td><td>
+    <td>
+    <div class="card" style="width: 20rem;">
+      <center><image src = "{{url_for('static', filename = 'imagenes/mpr.jpg')}}" class="card-img-top" alt="..."></center> 
+      <p class="card-text"></p>
+      <a href="{{ url_for('mprobabilidad') }}" class="btn btn-outline-success">Métodos Probabilisticos</a>
+      </div>
+  </td>
+<td><td><td>
+<td>
+  <div class="card" style="width: 20rem;">
+    <center><image src = "{{url_for('static', filename = 'imagenes/mr1.jpg')}}" class="card-img-top" alt="..."></center> 
+      <p class="card-text"></p>
+      <a href="{{ url_for('mregresion') }}" class="btn btn-outline-success">Métodos Regresión</a>
+    </div>
+  </td>
+</tr>
+<br>
+<tr><td>
+</td></tr>
+</table>
+</center>
+<center>
+  <table border="0">
+  <tr>
+    <td>
+    <div class="card" style="width: 20rem;">
+      <center><image src = "{{url_for('static', filename = 'imagenes/ms.jpg')}}" class="card-img-top" alt="..."></center> 
+      <p class="card-text"></p>
+      <a href="{{ url_for('msimulacion') }}" class="btn btn-outline-success">Métodos Simulaciones</a>
+    </td>
+    <td><td><td>
+    <td>
+      <div class="card" style="width: 20rem;">
+        <center><image src = "{{url_for('static', filename = 'imagenes/mds.jpg')}}" class="card-img-top" alt="..."></center> 
+          <p class="card-text"></p>
+          <a href="{{ url_for('modsim') }}" class="btn btn-outline-success">Modelo de Simulación</a>
+        </div>
+  </td>
+<td><td><td>
+</tr>
+<br>
+<tr><td>
+</td></tr>
+</table>
+</center>
+  </center>
+</div>
+
+    
+{% endblock%}

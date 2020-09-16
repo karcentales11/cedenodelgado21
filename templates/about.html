@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Métodos Randoms</h1>
+  <p class="lead">La primera técnica de generación de números pseudoaleatorios conocida como técnica del cuadrado medio.</p>
+  <hr class="my-4">
+  <p>- Seleccione un valor inicial o "semilla" (r ).</p>
+  <p>- Determinamos el número de dígitos
+  <p>- Elévese al cuadrado el valor inicial.
+  <p>- Tómense lo n dígitos centrales del cuadrado del número anterior
+  <p>- Repítase el proceso cuantas veces sea necesario.</p>
+  <a class="btn btn-primary btn-lg" href="mcm" role="button">Métodos Cuadrado Medio</a>
+</div>
+<br>
+<div class="jumbotron">
+  <h1 class="display-4"> Métodos congruenciales lineales</h1>
+  <p class="lead">La mayoría de los generadores de números aleatorios que se utilizan hoy son los congruenciales lineales, Lehmer (1951) incorporo una secuencia de númerosenteros X1, X2,X3,X4, definida como una formula recursiva de la siguiente forma:</p>
+  <hr class="my-4">
+  <p>- Xn+1 = (aXn + c) (modulo m)</p>
+  <p>- Xn+2 = (aXn+1 + c) (modulo m) 
+  <p>- Xn = Semilla 
+  <p>- a = multiplicador 
+  <p>- c = incremento
+  <p> - m = modulo   
+  <p>- Que  son enteros positivos
+  <hr class="my-4">
+  <p class="display-7">Propiedades:</p>
+  <hr class="my-4">
+  <p>- 0 < m , a < m, c<m</p>
+  <p></p>- ri = Xn+1 / m 
+  </p>
+  <a class="btn btn-primary btn-lg" href="mca" role="button">Métodos Congruenciales  Lineales</a>
+</div>
+<br>
+<div class="jumbotron">
+  <h1 class="display-4"> Métodos Congruenciales multiplicativo</h1>
+  <p class="lead">EL método multiplicativo congruencial es otro caso especial, donde la constante c=0 quedando la sucesión de la siguiente forma:</p>
+  <hr class="my-4">
+  <p>Xn+1 = (aXn ) (mod m)</p>
+  <p>Se ha demostrado que este método se comporta aceptablemente desde el punto de vista estadístico. Con éste método el periodo máximo es m/4 y paraasegurar esta propiedad cuando se utilizan computadoras binarias se consideran los siguientes criterios en la selección de los parámetros.
+  <p>- La elección de *m* debe hacerse mediante la relación:
+  <p>- m = 2^b , (b>2) para cumputadora binaria
+  <p>- Xn o sea el valor inicial o semilla deberá ser numero primo.
+  <p> - m = modulo   
+  <p>- En cuanto al valor de la constante *a* su valor podrá ser de Los números primos
+    además a < m, para el ejemplo vamos a utilizar los datos de un generador del la hoja electrónica Excel-03, Excel-07 *Wichman y Hill (1982) :
+  <p>- Xn+1 = (171Xn ) (mod 30264)
+  <p>- Xn+1 = (172Xn ) (mod 30307)
+    <P>- Xn+1 = (170Xn ) (mod 30323)
+  </p>
+  <a class="btn btn-primary btn-lg" href="mcmu" role="button">Métodos Congruenciales multiplicativo</a>
+</div>
+<br>
+<div class="jumbotron">
+  <h1 class="display-4"> Métodos Promedio Móvil</h1>
+  <p class="lead">El método de promedio móvil se utiliza cuando se requiere dar más importancia a los datos recientes, el pronóstico se lo calcula con el promedio de n valores de los datos más recientes de la siguiente forma:</p>
+  <hr class="my-4">
+  <p>*Promedio Móvil= (∑▒〖(n puntos de datos más recientes)〗)/n*</p>
+  <a class="btn btn-primary btn-lg" href="pm" role="button"> Métodos Promedio Móvil</a>
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-4"> Métodos Alisamiento Exponencial</h1>
+  <p class="lead">El modelo de suavización exponencial básico es</p>
+  <hr class="my-4">
+  <p>Sn=αXn–1+(1–α)Sn–1</p>
+  <hr class="my-4">
+  <p>Sn=Estimación Alisada. Es una Combinación Lineal de todos las demandas pasadas con coeficientes que disminuyen en forma geométrica de acuerdocon la edad de observación.
+    <p>Xn-1=valor real de la serie de tiempo en el periodo n-1 
+      <p>Sn-1=pronóstico de la serie de tiempo del periodo n-1 
+      <p>a=constante de suavización (0 <= α =< 1)</p>
+  <a class="btn btn-primary btn-lg" href="ae" role="button">Métodos Alisamiento Exponencial</a>
+</div>
+<div class="jumbotron">
+  <h1 class="display-4"> Métodos  Líneas de Espera</h1>
+  <p class="lead">El objetivo es encontrar el estado óptimo del sistema y determinar una capacidad de servicio apropiada, Minimizar el tiempo de atención y servicio a los clientes o usuarios que llegan en un determinado tiempo.</p>
+  <hr class="my-4">
+  <p>VARIABLES EXÓGENAS</p>
+  <p>Lq: Longitud de la cola es el número de clientes que hay en la cola
+    <p>N : numero de clientes o unidades en el sistema de colas
+      <p>Pn: Probabilidad que se encuentren n clientes en cola
+        <p>Se deben ingresar los valores de N de campos, landa y Nu</p>
+  <a class="btn btn-primary btn-lg" href="mle2" role="button"> Métodos  Líneas de Espera</a>
+</div>
+{% endblock%}

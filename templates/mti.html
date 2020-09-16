@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Seccion de Bienvenida -->
+    <section class="section-head">
+        <div class="jumbotron bg">
+            <center><image src = "{{url_for('static', filename = 'imagenes/mti.jpg')}}" width="1000" height="300" alt=""></center> 
+            </div>
+    </section>
+<main>
+    <section>
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-content">
+                  <span class="card-title center center-align"><h1><center>Formulario</center></h1></span>
+                    <div class="row">
+<!----JINJA-----------------Formulario--------------> 
+                      <form class="col-md-8 offset-md-2" action="/mle3" method="post" role="form">
+                      <div class="row">
+                        <div class="input-field col s12 m6">
+                          <br>
+                          <input id="text" name="num6" type="number" step="0.0001" class="validate invalid" required="">
+                          <label for="icon_prefix">Landa</label>
+                        </div>
+                        <div class="input-field col s11 m6">
+                          <br>
+                          <input id="text" name="num7" type="number" step="0.001" class="validate invalid" required="">
+                          <label for="icon_telephone">Miu</label> 
+                          <br>
+                        </div>
+                        <div class="input-field col s11 m5 ">
+                          <br>
+                          <input id="text" name="num1" class="validate" min="2" max="1000" required>
+                          <label for="icon_telephone">N</label> 
+                          <br>
+                        </div>
+                        <div class="input-field col s11 m5">
+                          <br>
+                          <input  id="text" name="num2" type="text" class="validate" min="2" max="1000" required>
+                          <label for="icon_prefix">M</label>
+                        </div>
+                        <div class="input-field col s11 m5">
+                            <br>
+                            <input id="text" name="num3" class="validate" pattern="\d{3,4}" required>
+                            <label for="icon_telephone">A</label> 
+                            <br>
+                          </div>
+                        <div class="input-field col s11 m5">
+                          <br>
+                          <input id="text" name="num4" class="validate" pattern="\d{3,4}" required>
+                          <label for="icon_telephone">X0</label> 
+                          <br>
+                        </div>                        
+                        <div class="input-field col s11 offset-md-4">
+                          <br>
+                          <input  id="text" name="num5" type="text" class="validate" min="2" max="1000" required>
+                          <label for="icon_prefix">C</label>
+                        </div>
+
+                        <div class="input-field col s11 offset-md-3">
+                          <br>
+                          <input class="btn btn-danger" onclick="history.back()" name="volver atrás" value="volver atrás">
+                          <input class="btn btn-info"name="operacion" value="tranformada" type="submit"/> 
+                        </div> 
+                      </form> 
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <!----JINJA------Tabla de resultados--------------> 
+    <section>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content">
+              <form class="col-md-12" action="/mle2" method="post" role="form">
+                <div class="row">
+                  <div class="input-field col s12 m6">
+                    <br>
+                    <span class="card-title center center-align"><h2><center>Resultado 1</center></h2></span>
+                    <div class="row">
+                      <br>
+                      <table class="offset-md-1 ">
+                        <table class="table-striped table-bordered bg-white table-sm " WIDTH="1090">
+                          <thead>
+                            <tr>
+                              <td><center>Landa</center>
+                              <td><center>Miu</center>
+                              <td><center>P</center>
+                              <td><center>Po</center>
+                              <td><center>Lq</center>
+                              <td><center>L</center>
+                              <td><center>W</center>
+                              <td><center>Wq</center>
+                              <td><center>Pn</center>
+                          </thead>
+                          <tbody>
+                              </td>
+                              <td><center>{{landa}}</center></td>
+                              <td><center>{{n}}</center></td>
+                              <td><center>{{p}}</center></td>
+                              <td><center>{{po}}</center></td>
+                              <td><center>{{lq}}</center></td>
+                              <td><center>{{l}}</center></td>
+                              <td><center>{{w}}</center></td>
+                              <td><center>{{wq}}</center></td>
+                              <td><center>{{pn}}</center></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </form>   
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+          <section>
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card">
+                  <div class="card-content">
+                    <form class="col-md-12" action="/mle3" method="post" role="form">
+                      <div class="row">
+                        <div class="input-field col s12 m6">
+                          <br>
+                          <div class="row">
+                            <br>
+                            <table class="offset-md-1 ">
+                              <table class="table-striped table-bordered bg-white table-sm " WIDTH="1090">
+                                <thead>
+                                  <tr>
+                                    <td><center>N</center>
+                                    <td><center>M</center>
+                                    <td><center>A</center>
+                                    <td><center>XO</center>
+                                    <td><center>C</center>
+                                </thead>
+                                <tbody>
+                                    </td>
+                                    <td><center>{{nuit}}</center>
+                                    <td><center>{{m}}</center></td>
+                                    <td><center>{{a}}</center></td>
+                                    <td><center>{{xo}}</center></td>
+                                    <td><center>{{c}}</center></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </form>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+</main
+{% endblock%}

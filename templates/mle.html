@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Seccion de Bienvenida -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"> </script>
+    <section class="section-head">
+        <div class="jumbotron bg">
+          <center><image src = "{{url_for('static', filename = 'imagenes/slenr.jpg')}}" width="1000" height="300" alt=""></center> 
+    </div>
+
+<main>
+      <section>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-content">
+                      <span class="card-title center center-align"><h1><center>Formulario</center></h1></span>
+                        <div class="row">
+    <!----JINJA-----------------Formulario--------------> 
+                          <form class="col-md-8 offset-md-2" action="/mle" method="post" role="form">
+                          <div class="row">
+                            <div class="input-field col s12 m6">
+                              <br>
+                              <input id="text" name="num6" type="number" step="0.001" class="validate invalid" required="">
+                              <label for="icon_prefix">Landa</label>
+                              </div>
+                              <div class="input-field col s11 m6">
+                              <br>
+                              <input id="text" name="num7" type="number" step="0.001" class="validate invalid" required="">
+                              <label for="icon_telephone">Miu</label> 
+                              <br>
+                              </div>
+                            <div class="input-field col s11 m5 ">
+                              <br>
+                              <input id="text" name="num1" class="validate" min="2" max="1000" required>
+                              <label for="icon_telephone">N</label> 
+                              <br>
+                            </div>
+                            
+    
+                            <div class="input-field col s11 offset-md-3">
+                              <br>
+                              <input class="btn btn-danger" onclick="history.back()" name="volver atrás" value="volver atrás">
+                              <input class="btn btn-info"name="operacion" value="congruencialadictivo" type="submit"/> 
+                            </div> 
+                          </form> 
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <br>
+      
+<!----JINJA------Tabla de resultados--------------> 
+<section>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content">
+          <form class="col-md-12" action="/mle" method="post" role="form">
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <br>
+                <span class="card-title center center-align"><h2><center>Resultado 1</center></h2></span>
+                <div class="row">
+                  <br>
+                  <table class="offset-md-1 ">
+                    <table class="table-striped table-bordered bg-white table-sm " WIDTH="1090">
+                      <thead>
+                        <tr>
+                          <td><center>Landa</center>
+                          <td><center>Miu</center>
+                          <td><center>P</center>
+                          <td><center>Po</center>
+                          <td><center>Lq</center>
+                          <td><center>L</center>
+                          <td><center>W</center>
+                          <td><center>Wq</center>
+                          <td><center>Pn</center>
+                      </thead>
+                      <tbody>
+                          </td>
+                          <td><center>{{landa}}</center></td>
+                          <td><center>{{n}}</center></td>
+                          <td><center>{{p}}</center></td>
+                          <td><center>{{po}}</center></td>
+                          <td><center>{{lq}}</center></td>
+                          <td><center>{{l}}</center></td>
+                          <td><center>{{w}}</center></td>
+                          <td><center>{{wq}}</center></td>
+                          <td><center>{{pn}}</center></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>   
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+      <section>
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-content">
+                <form class="col-md-12" action="/mle" method="post" role="form">
+                  <div class="row">
+                    <div class="input-field col s12 m6">
+                      <br>
+                      <span class="card-title center center-align"><h2><center>Resultado 2</center></h2></span>
+                      <div class="row">
+                        <br>
+                        <table class="offset-md-0 ">
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>A. Llegada</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in r%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>A. Servicio</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in r2%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>T.E. Llegada</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in tell%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm" WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>T. Servicio</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in ts%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>H.E. Llegada</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in hll%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>T. I. Servicio</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in his%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="125">
+                            <thead>
+                              <tr>
+                                <td><center>T. F Servicio</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in tfs%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="125">
+                            <thead>
+                              <tr>
+                                <td><center>T. E. Espera</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in tee%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="120">
+                            <thead>
+                              <tr>
+                                <td><center>T.E. Sistema</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in tes%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </form>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</main
+
+{% endblock%}

@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Seccion de Bienvenida -->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"> </script>
+    <section class="section-head">
+        <div class="jumbotron bg">
+          <center><image src = "{{url_for('static', filename = 'imagenes/mcm.jpg')}}" width="1000" height="300" alt=""></center> 
+    </div>
+
+<main>
+    
+    </section>
+    <!-- Formulario y tabla GET&POST -->
+    <section>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-content">
+                      <span class="card-title center center-align"><h1><center>Formulario</center></h1></span>
+                        <div class="row">
+<!----JINJA-----------------Formulario--------------> 
+                          <form class="col-md-13 offset-md-2" action="/mcm" method="post" role="form">
+                          <div class="row">
+                            <div class="input-field col s12 m6">
+                              <br>
+                              <input  id="text" name="num1" type="text" class="validate" pattern="\d{3,4}" required>
+                              <label for="icon_prefix">Semilla</label>
+                            </div>
+                            <div class="input-field col s11 offset-md-2">
+                              <br>
+                              <input id="text" name="num2" class="validate" min="2" max="1000" required>
+                              <label for="icon_telephone">Iteracciones</label> 
+                              <br>
+                            </div>
+                            <div class="input-field col s11 offset-md-3">
+                              <br>
+                              <input class="btn btn-danger" onclick="history.back()" name="volver atrás" value="volver atrás">
+                              <input class="btn btn-info"name="operacion" value="cuadradomedio" type="submit"/> 
+                              
+                            </div> 
+                          </form> 
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <br>
+        
+<!----JINJA------Tabla de resultados--------------> 
+      <section>
+        <div class="row">
+          <div class="col s12 m12">
+            <div class="card">
+              <div class="card-content">
+                <form class="col-md-12" action="/mcm" method="post" role="form">
+                  <div class="row">
+                    <div class="input-field col s12 m6">
+                      <br>
+                      <span class="card-title center center-align"><h2><center>Resultado</center></h2></span>
+                      <div class="row">
+                        <br>
+                        <table class="offset-md-1 ">
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="300">
+                            <thead>
+                              <tr>
+                                <td><center>Multiplos</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in lista2%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm " WIDTH="300">
+                            <thead>
+                              <tr>
+                                <td><center>Resultado</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in lista%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                          <table class="table-striped table-bordered bg-white table-sm" WIDTH="300">
+                            <thead>
+                              <tr>
+                                <td><center>Decimal</center></td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {%for list in lista3%}
+                              <tr>
+                                <td>{{list}}</td>
+                              </tr>
+                              {%endfor%}
+                            </tbody>
+                          </table>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </form>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</main
+
+{% endblock%}

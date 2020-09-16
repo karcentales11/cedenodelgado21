@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<table border="0">
+    <tr>
+      <td>
+        <div class="card" style="width: 68rem;">
+          <center><image src = "{{url_for('static', filename = 'imagenes/mds.jpg')}}" width="1080" height="400" alt=""></center> 
+        </div>
+      </td>
+    </tr>
+    </table>
+      <td>
+        <center>
+        <table border="0">
+          <tr>
+            <td>
+        <div class="card" style="width: 17rem;">
+          <center><image src = "{{url_for('static', filename = 'imagenes/slenr.jpg')}}" class="card-img-top" alt="..."></center> 
+            <p class="card-text"></p>
+            <a href="{{ url_for('mle') }}" class="btn btn-outline-primary btn-lg btn-block action-button">Calcular</a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-danger btn-lg btn-block action-button">Fórmula</a>
+          </div>
+    </td>
+    <td><td><td><td><td><td><td><td><td>
+        <td>
+          <div class="card" style="width: 17rem;">
+            <center><image src = "{{url_for('static', filename = 'imagenes/sdos.jpg')}}" class="card-img-top" alt="..."></center> 
+              <p class="card-text"></p>
+              <a href="{{ url_for('mle2') }}" class="btn btn-outline-primary btn-lg btn-block action-button">Calcular</a>
+              <a href="{{ url_for('about') }}" class="btn btn-outline-danger btn-lg btn-block action-button">Fórmula</a>
+            </div>
+          </td>
+    <td><td><td><td><td><td><td><td><td>
+    <td>
+      <div class="card" style="width: 17rem;">
+        <center><image src = "{{url_for('static', filename = 'imagenes/sleca.jpg')}}" class="card-img-top" alt="..."></center> 
+          <p class="card-text"></p>
+          <a href="{{ url_for('mle3') }}" class="btn btn-outline-primary btn-lg btn-block action-button">Calcular</a>
+          <a href="{{ url_for('about') }}" class="btn btn-outline-danger btn-lg btn-block action-button">Fórmula</a>
+        </div>
+      </td>
+    </tr>
+    <br>
+    <tr><td>
+    </td></tr>
+    </table>
+    <input class="btn btn-danger btn-lg action-button" onclick="history.back()" name="volver atrás" value="volver atrás">
+    
+    </center>
+    {% endblock%}
